@@ -13,20 +13,16 @@ LIB_DIR=./lib
 INC_DIR=./include
 BIN_DIR=./bin
 SRC_DIR=./src
+TEST_DIR=./teste
 
-all: regra1 regra2 regra3
+all: regra1
 
-regra1: $(BIN_DIR)/apidisk.o
-		ar crs $(LIB_DIR)/libapidisk.a $(BIN_DIR)/libapidisk.o
+regra1: $(BIN_DIR)/t2fs.o $(BIN_DIR)/aux.o
+	ar crs $(LIB_DIR)/libt2fs.a $(BIN_DIR)/t2fs.o $(BIN_DIR)/aux.o $(LIB_DIR)/apidisk.o $(LIB_DIR)/bitmap2.o
 
-
-regra2:
-
-
-regra3:
-
+$(BIN_DIR)/%.o: $(SRC_DIR)/%.c
+	$(CC) -c -o $@ $< -I$(INC_DIR)/ -Wall -m32
 
 clean:
 	rm -rf $(LIB_DIR)/*.a $(BIN_DIR)/*.o $(SRC_DIR)/*~ $(INC_DIR)/*~ *~
-
 
