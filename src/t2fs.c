@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-#include "..\include\t2fs.h"
-#include "..\include\apidisk.h"
-#include "..\include\bitmap2.h"
+#include "../include/t2fs.h"
+#include "../include/apidisk.h"
+#include "../include/bitmap2.h"
 
 
 int identify2 (char *name, int size) {
@@ -22,7 +23,7 @@ int identify2 (char *name, int size) {
 
 FILE2 create2 (char *filename) {
 
-	return NULL;
+	return -1;
 }
 
 int delete2 (char *filename) {
@@ -32,7 +33,7 @@ int delete2 (char *filename) {
 
 FILE2 open2 (char *filename) {
 
-	return NULL;
+	return -1;
 }
 
 int close2 (FILE2 handle) {
@@ -72,7 +73,7 @@ int rmdir2 (char *pathname) {
 
 DIR2 opendir2 (char *pathname) {
 
-	return NULL;
+	return -1;
 }
 
 int readdir2 (DIR2 handle, DIRENT2 *dentry) {
