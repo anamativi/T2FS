@@ -12,7 +12,10 @@ int identify2 (char *name, int size) {
 	char grupo[] = "Ana Mativi\nAthos Lagemann\nRicardo Sabedra\n";
 	int tamanho = sizeof(grupo);
 
-	if (size <= 0){
+	//if (init())
+	//  return fatal("identify2: Could not initialize T2FS", NOINFO, 0);
+
+	if (size <= tamanho){
 		return -1;
 	}
 
