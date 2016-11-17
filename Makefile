@@ -16,10 +16,10 @@ $(BIN_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) -c -o $@ $< -I$(INC_DIR)/ -Wall -m32
 
 test : libt2fs.a $(TEST_DIR)/shell.c
-	$(CC) $(TEST_DIR)/shell.c -L$(LIB_DIR) -I$(INC_DIR) -lt2fs -o $(TEST_DIR)/shell -Wall -m32 -std=c99
+	$(CC) $(TEST_DIR)/shell.c -L$(LIB_DIR) -I$(INC_DIR) -lt2fs -o $(TEST_DIR)/shell -m32 -std=c99
 
 clean:
-	rm -rf $(BIN_DIR)/* $(BIN_DIR)/shell $(LIB_DIR)/*.a $(BIN_DIR)/*.o $(SRC_DIR)/*~ $(INC_DIR)/*~ *~
+	rm -rf $(BIN_DIR)/* $(TEST_DIR)/shell $(LIB_DIR)/*.a $(BIN_DIR)/*.o $(SRC_DIR)/*~ $(INC_DIR)/*~ *~
 
 # essa regra serve para ser rapido: limpa tudo, compila tudo, reseta o disco e inicia o terminal
 #terminal: clean libt2fs.a
